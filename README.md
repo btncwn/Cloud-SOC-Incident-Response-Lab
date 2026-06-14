@@ -2,95 +2,110 @@
 
 ## Overview
 
-This repository demonstrates cloud identity monitoring, threat hunting, detection engineering, and incident investigation using Microsoft Sentinel and Microsoft Entra ID.
+Cloud SOC Incident Response Lab is a hands-on Microsoft Sentinel and Microsoft Entra ID security monitoring project designed to simulate real-world cloud security operations. The lab focuses on identity monitoring, threat detection, investigation workflows, detection engineering, and security automation using Microsoft Sentinel, Log Analytics, KQL, Azure CLI, and Microsoft Entra ID telemetry.
 
-The project focuses on generating real cloud identity events, collecting telemetry through Microsoft Sentinel, hunting activity with KQL, and documenting investigation findings using an analyst-driven workflow.
+The project demonstrates practical cloud security skills through real investigation scenarios, KQL hunting queries, analytics rule development, MITRE ATT&CK mapping, and automation pipelines.
 
-## Technologies
+## Technologies Used
 
 * Microsoft Sentinel
-* Microsoft Entra ID
+* Microsoft Entra ID (Azure AD)
 * Log Analytics Workspace
-* KQL (Kusto Query Language)
+* Kusto Query Language (KQL)
+* Azure CLI
+* Microsoft Defender Portal
 * MITRE ATT&CK Framework
+* GitHub
+
+---
 
 ## Investigations
 
-### 01 - Failed Authentication Investigation
+### 01 Failed Authentication Investigation
 
-Generated multiple failed sign-in attempts and investigated authentication failures through the SigninLogs table.
+Investigated failed cloud authentication attempts using Microsoft Sentinel SigninLogs. Identified failed login activity, analyzed authentication outcomes, and documented investigation findings.
 
-**ATT&CK:** T1110 - Brute Force
+### 02 Successful Authentication Investigation
 
-### 02 - Successful Authentication Investigation
+Validated successful user authentication activity through Microsoft Sentinel. Investigated sign-in events, authentication methods, and access patterns.
 
-Validated successful cloud authentication monitoring and visibility through Microsoft Sentinel.
+### 03 Privileged Group Owner Assignment
 
-**ATT&CK:** T1078 - Valid Accounts
+Investigated privileged group ownership changes using Microsoft Entra ID Audit Logs. Documented ownership assignment activity and security implications.
 
-### 03 - Privileged Group Owner Assignment Investigation
+### 04 KQL Hunting Queries
 
-Investigated privileged ownership changes within Microsoft Entra ID using AuditLogs.
+Developed and executed KQL hunting queries against cloud identity telemetry to identify authentication activity, application management events, and potential security anomalies.
 
-**ATT&CK:** T1098 - Account Manipulation
+### 05 Sentinel Analytics Rules
 
----
+Created custom Microsoft Sentinel analytics rules to support cloud security monitoring and alert generation.
 
-## Hunting Queries
+### 06 MITRE ATT&CK Mapping
 
-The repository includes validated KQL hunting queries covering:
+Mapped observed cloud identity activities and investigation findings to relevant MITRE ATT&CK techniques and tactics.
 
-* Failed Authentication Activity
-* Successful Authentication Activity
-* Privileged Group Ownership Changes
+### 07 OAuth Consent Phishing Investigation
 
----
+Investigated OAuth application consent activity and delegated permission grants using Microsoft Entra ID Audit Logs. Demonstrated detection opportunities for OAuth consent phishing attacks and unauthorized application access.
 
-## Sentinel Analytics Rules
+### 08 Service Principal Abuse Investigation
 
-Custom analytics rules were developed for:
+Investigated service principal management activity, application changes, and credential-related operations using Microsoft Entra ID Audit Logs. Demonstrated visibility into non-human identity activity and cloud persistence techniques.
 
-* Multiple Failed Authentication Attempts
-* Successful Authentication Monitoring
-* Privileged Group Ownership Changes
+### 09 Sentinel Log Export Pipeline
+
+Built an Azure CLI automation pipeline to query Microsoft Sentinel telemetry directly from macOS using Log Analytics and KQL. Exported SigninLogs data for automation, reporting, and future AI-assisted analysis workflows.
 
 ---
 
-## MITRE ATT&CK Mapping
+## Automation Pipeline
 
-Observed cloud identity events were mapped to:
+The project includes automation scripts that interact directly with Microsoft Sentinel and Log Analytics through Azure CLI.
 
-* T1110 – Brute Force
-* T1078 – Valid Accounts
-* T1098 – Account Manipulation
+Pipeline Workflow:
+
+Microsoft Sentinel
+↓
+Log Analytics
+↓
+KQL Query
+↓
+Azure CLI
+↓
+macOS
+↓
+JSON Export
+
+This demonstrates how cloud security telemetry can be collected and integrated into future detection engineering and security automation workflows.
 
 ---
 
-## Key Skills Demonstrated
+## Skills Demonstrated
 
-* Cloud Identity Monitoring
-* Microsoft Sentinel Investigation
-* KQL Threat Hunting
+* Cloud Security Monitoring
+* Security Operations (SOC)
+* Incident Response
+* Threat Hunting
 * Detection Engineering
-* Identity Governance Monitoring
-* Incident Documentation
+* KQL Query Development
+* Microsoft Sentinel
+* Microsoft Entra ID Security
+* Identity and Access Management (IAM)
 * MITRE ATT&CK Mapping
+* Security Automation
+* Azure CLI
 
 ---
 
-## Future Investigations
+## Key Outcomes
 
-Planned investigations include:
+* Investigated real Microsoft Sentinel telemetry
+* Developed custom KQL hunting queries
+* Built cloud identity security investigations
+* Mapped detections to MITRE ATT&CK
+* Created Sentinel analytics rules
+* Automated log exports using Azure CLI
+* Documented investigation findings and evidence
 
-* OAuth Consent Phishing
-* Service Principal Creation
-* Client Secret Creation
-* Privileged Role Assignment
-* PIM Role Activation
-* Cloud RBAC Escalation
-
-## Author
-
-Turhan Acar
-
-Cyber Security Analyst | SOC Operations | Threat Hunting | Detection Engineering | Incident Response
+This project demonstrates practical cloud SOC analyst, incident response, threat hunting, and detection engineering skills using Microsoft Sentinel and Microsoft Entra ID.
