@@ -1,3 +1,2 @@
-.DS_Store
 defender-pipeline/exports/
-defender-pipeline/exports/
+*.json
